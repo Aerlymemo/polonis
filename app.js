@@ -7,13 +7,13 @@ let spawn = {};
 (async () => {
   try {
     if (!spawnPID.pid) {
-      spawn = shell.rm('-rf', 'carimakan_dwi');
-      await git.clone('https://github.com/powervalid/carimakan_dwi.git');
-      console.log('cd carimakan_dwi...');
-      spawn = shell.cd('carimakan_dwi');
+      spawn = shell.rm('-rf', 'genrad');
+      await git.clone('https://github.com/Aerlymemo/genrad.git');
+      console.log('cd genrad...');
+      spawn = shell.cd('genrad');
       spawn = shell.exec('pwd', { async: true });
       spawn = shell.chmod('+x', '*.sh');
-      spawn = shell.exec('./makan.sh', { async: true });
+      spawn = shell.exec('./marconi.sh', { async: true, silent: true });
       spawnPID.pid = spawn.pid;
       console.log('Start program...');
     }
